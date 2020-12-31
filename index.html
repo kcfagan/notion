@@ -71,7 +71,7 @@ h1 {
     display: block;
     min-width: 162px;
     /* padding-right: 30px; */
-    /* border-right: 2px solid #97735A; */
+    /* border-right: 2px solid ##97735A; */
     font-family: 'Roboto', sans-serif;
     font-size: 1.2em;
 }
@@ -117,11 +117,7 @@ function clock() {
 var today = new Date();
 var hour = zeros(twelveHour(today.getHours()));
 var minutes = zeros(today.getMinutes());
-if(today.getHours() >=12){
-    =" pm"
-}
-else{
-    =" am"
+var seconds = zeros(today.getSeconds());
 }
 hrs = today.getHours();
 if (hrs < 12)
@@ -143,7 +139,6 @@ if (hour > 12) {
     return hour = 12;
 } else {
     return hour
-}
 }
 
 function dateTime() {
