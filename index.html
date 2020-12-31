@@ -41,9 +41,10 @@ h1 {
     padding: 10px 25px 10px 25px;
     border-radius: 10px;
     background: #97735A;
+    width: 85vw;
     color: #fff;
     display: inline-block;
-    box-shadow: 2px 2px 1px 0px #fff;
+    box-shadow: 2px 2px 1px 0px #97735A;
 }
 
 .card:hover {
@@ -52,41 +53,35 @@ h1 {
 }
 
 .clock {
-    display: inline-block;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    font-size: 1.2em;
-    color: #fff;
-    /* padding-left: 20px; */
+    display: inline;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2em;
+   
 }
 
 .time {
-    display: inline-block;
+    display: inline;
     min-width: 37px;
 }
 
 .colon {
     font-size: 1.1em;
-    color: #fff;
     display: inline-block;
 }
 
 .date {
-    display: block;
+    display: inline;
     min-width: 162px;
-    /* padding-right: 30px; */
-    /* border-right: 2px solid #97735A; */
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.2em;
-    color: #fff;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2em;
+    padding-right: 30px;
 }
 .greet{
     
-    min-width: 162px;
-    /* padding-right: 30px; */
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.2em;
-    color: #fff;
+    display:inline;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+     padding-right: 30px;
 }
 
     </style>
@@ -105,6 +100,7 @@ h1 {
         <div class="colon">:</div>
         <div class="time" id="min"></div>
         <div class="colon">:</div>
+        <div class="time" id="sec"></div>
       </div>
     </div>
     
@@ -122,7 +118,6 @@ function clock() {
 var today = new Date();
 var hour = zeros(twelveHour(today.getHours()));
 var minutes = zeros(today.getMinutes());
-var seconds = zeros(today.getSeconds());
 var seconds = zeros(today.getSeconds());
 if(today.getHours() >=12){
     seconds+=" pm"
@@ -151,6 +146,15 @@ if (hour > 12) {
     return hour = 12;
 } else {
     return hour
+}
+}
+    
+// adds zero infront of single digit number
+function zeros(num) {
+if (num < 10) {
+    num = '0' + num
+};
+return num;
 }
 
 function dateTime() {
