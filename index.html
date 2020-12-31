@@ -61,7 +61,7 @@ h1 {
 
 .time {
     display: inline;
-    min-width: 20px;
+    min-width: 37px;
 }
 
 .colon {
@@ -71,17 +71,17 @@ h1 {
 
 .date {
     display: inline;
-    min-width: 150px;
+    min-width: 162px;
     font-family: 'Segoe UI', normal;
     font-size: 2em;
-    padding-right: 20px;
+    padding-right: 30px;
 }
 .greet{
     
     display:inline;
     font-family: 'Segoe UI', normal;
     font-size: 2rem;
-     padding-right: 20px;
+     padding-right: 30px;
 }
 
     </style>
@@ -118,6 +118,7 @@ function clock() {
 var today = new Date();
 var hour = zeros(twelveHour(today.getHours()));
 var minutes = zeros(today.getMinutes());
+var seconds = zeros(today.getSeconds());
 if(today.getHours() >=12){
     seconds+=" pm"
 }
@@ -135,6 +136,7 @@ if (hrs < 12)
 document.getElementById('greet').innerHTML = greet;
 document.getElementById('hour').innerHTML = hour;
 document.getElementById('min').innerHTML = minutes;
+document.getElementById('sec').innerHTML = seconds;
 }
 
 function twelveHour(hour) {
