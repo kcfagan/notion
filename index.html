@@ -71,7 +71,7 @@ h1 {
     display: block;
     min-width: 162px;
     /* padding-right: 30px; */
-    /* border-right: 2px solid #295C7B; */
+    /* border-right: 2px solid #97735A; */
     font-family: 'Roboto', sans-serif;
     font-size: 1.2em;
 }
@@ -118,23 +118,22 @@ var today = new Date();
 var hour = zeros(twelveHour(today.getHours()));
 var minutes = zeros(today.getMinutes());
 if(today.getHours() >=12){
-    seconds+=" pm"
+    =" pm"
 }
 else{
-    seconds+=" am"
+    =" am"
 }
 hrs = today.getHours();
 if (hrs < 12)
-        greet = 'good morning kaylyn  ';
+        greet = 'good morning, kaylyn  ';
     else if (hrs >= 12 && hrs <= 17)
-        greet = 'good afternoon kaylyn ';
+        greet = 'good afternoon, kaylyn ';
     else if (hrs >= 17 && hrs <= 24)
-        greet = 'good evening kaylyn  ';
+        greet = 'good evening, kaylyn  ';
 // console.log(today.toLocaleTimeString());
 document.getElementById('greet').innerHTML = greet;
 document.getElementById('hour').innerHTML = hour;
 document.getElementById('min').innerHTML = minutes;
-document.getElementById('sec').innerHTML = seconds;
 }
 
 function twelveHour(hour) {
@@ -145,13 +144,6 @@ if (hour > 12) {
 } else {
     return hour
 }
-}
-// adds zero infront of single digit number
-function zeros(num) {
-if (num < 10) {
-    num = '0' + num
-};
-return num;
 }
 
 function dateTime() {
